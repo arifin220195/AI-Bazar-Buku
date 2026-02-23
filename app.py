@@ -14,7 +14,7 @@ except Exception as e:
 @st.cache_data
 def load_data():
     # Pastikan file di GitHub kamu namanya 'bazar buku.csv'
-    file_name = 'bazar buku.csv'
+    file_name = 'buku.csv'
     if os.path.exists(file_name):
         # Membaca CSV (Pandas otomatis mengenali koma sebagai pemisah)
         return pd.read_csv(file_name)
@@ -75,3 +75,4 @@ if prompt := st.chat_input("Tanya harga buku..."):
         st.session_state.messages.append({"role": "assistant", "content": bot_text})
     except Exception as e:
         st.error(f"AI Error: {e}")
+
